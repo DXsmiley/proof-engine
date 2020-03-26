@@ -16,9 +16,10 @@ if [ -n "$(git status --porcelain)" ]; then
     exit 1
 fi
 
-tempfile="$(mktemp)/index.html"
+tempdir="$(mktemp)"
+rm -rf -- "$tempdir"
 
-elm make src/Main.elm --output="$tempfile"
+elm make src/Main.elm --output="$tempdir/index.html"
 # git checkout gh-pages
 # mv $tempfile index.html
 # git add index.html
