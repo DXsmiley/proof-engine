@@ -20,9 +20,9 @@ tempdir="$(mktemp)"
 rm -rf -- "$tempdir"
 
 elm make src/Main.elm --output="$tempdir/index.html"
-# git checkout gh-pages
-# mv $tempfile index.html
-# git add index.html
-# git commit -m "Publish from script"
-# git push
-# git checkout master
+git checkout gh-pages
+mv $tempfile index.html
+git add index.html
+git commit -m "Publish from script"
+git push
+git checkout master
