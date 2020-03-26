@@ -21,7 +21,7 @@ rm -rf -- "$tempdir"
 
 elm make src/Main.elm --output="$tempdir/index.html"
 git checkout gh-pages
-mv $tempfile index.html
+mv "$tempdir/index.html" index.html
 git add index.html
 git commit -m "Publish from script"
 git push
