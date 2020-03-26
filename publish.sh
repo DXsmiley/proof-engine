@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eoux
 
 # https://stackoverflow.com/a/17744637
 cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")"
@@ -18,9 +19,9 @@ fi
 tempfile="$(mktemp)/index.html"
 
 elm make src/Main.elm --output="$tempfile"
-git checkout gh-pages
-mv $tempfile index.html
-git add index.html
-git commit -m "Publish from script"
-git push
-git checkout master
+# git checkout gh-pages
+# mv $tempfile index.html
+# git add index.html
+# git commit -m "Publish from script"
+# git push
+# git checkout master
